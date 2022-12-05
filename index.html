@@ -26,12 +26,48 @@
     </div>
     <div class="container-tab">
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="/">Home</a></li>
-            <!--라우팅된 '/sotckindex.html'로 연결-->
-            <li><a data-toggle="tab" href="/stockindex.html">주가지수</a></li>
-            <li><a data-toggle="tab" href="/ETF.html">ETF</a></li>
-            <li><a data-toggle="tab" href="/bond.html">bond</a></li>
-            <li><a data-toggle="tab" href="/corr.html">상관계수</a></li>
+            <li class="active"><a data-toggle="tab" id = home>Home</a></li>
+            <script>
+                $(document).ready(function(){
+                    $("#home").click(function(){
+                        window.location.href = "/index.html";
+                    });
+                });
+            </script>
+            <!-- 탭 클릭시 페이지 이동 -->
+            <li><a data-toggle="tab" id = stockindex >주가지수</a></li>
+            <script>
+                $(document).ready(function(){
+                    $("#stockindex").click(function(){
+                        window.location.href = "/stockindex.html";
+                    });
+                });
+            </script>
+            <li><a data-toggle="tab" id = ETF >ETF</a></li>
+            <script>
+                $(document).ready(function(){
+                    $("#stockinfo").click(function(){
+                        window.location.href = "/ETF.html";
+                    });
+                });
+            </script>
+            <li><a data-toggle="tab" id = bond >bond</a></li>
+            <script>
+                $(document).ready(function(){
+                    $("#stockinfo").click(function(){
+                        window.location.href = "/bond.html";
+                    });
+                });
+            </script>
+            <li><a data-toggle="tab" id = corrpage >상관계수</a></li>
+            <script>
+                $(document).ready(function(){
+                    $("#corrpage").click(function(){
+                        window.location.href = "/corrpage.html";
+                    });
+                });
+            </script>
+
         </ul>
         <div class="tab-content">
             <div id="home" class="tab-pane fade in active">
