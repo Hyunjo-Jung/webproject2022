@@ -14,7 +14,9 @@
    </style>
    <!--tablestyle.css 가져오기-->
     <link rel="stylesheet" href="public/css/table.css">
-
+   <script>
+    const g = "https://hyunjo-jung.github.io/webproject2022" 
+   </script>
 </head>
 <body>
     <!--body style 가운데 정렬-->
@@ -30,7 +32,7 @@
             <script>
                 $(document).ready(function(){
                     $("#home").click(function(){
-                        window.location.href = "/index.html";
+                        window.location.href =  g + "/index.html";
                     });
                 });
             </script>
@@ -39,23 +41,23 @@
             <script>
                 $(document).ready(function(){
                     $("#stockindex").click(function(){
-                        window.location.href = "/stockindex.html";
+                        window.location.href = g + "/stockindex.html";
                     });
                 });
             </script>
             <li><a data-toggle="tab" id = ETF >ETF</a></li>
             <script>
                 $(document).ready(function(){
-                    $("#stockinfo").click(function(){
-                        window.location.href = "/ETF.html";
+                    $("#ETF").click(function(){
+                        window.location.href = g + "/ETF.html";
                     });
                 });
             </script>
             <li><a data-toggle="tab" id = bond >bond</a></li>
             <script>
                 $(document).ready(function(){
-                    $("#stockinfo").click(function(){
-                        window.location.href = "/bond.html";
+                    $("#bond").click(function(){
+                        window.location.href = g + "/bond.html";
                     });
                 });
             </script>
@@ -63,7 +65,7 @@
             <script>
                 $(document).ready(function(){
                     $("#corrpage").click(function(){
-                        window.location.href = "/corrpage.html";
+                        window.location.href = g + "/corr.html";
                     });
                 });
             </script>

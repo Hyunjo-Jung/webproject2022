@@ -11,6 +11,10 @@
     <!--bootstrap-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
+        const g = "https://hyunjo-jung.github.io/webproject2022" 
+    </script>
+    
+    <script>
         //public/js/index.js사용
         $(document).ready(function(){
             $.getScript("public/js/index.js", function(){
@@ -39,12 +43,47 @@
     </div>
     <div class="container-tab">
         <ul class="nav nav-tabs">
-            <li><a data-toggle="tab" href="/">Home</a></li>
-            <!--라우팅된 '/sotckindex.html'로 연결-->
-            <li><a data-toggle="tab" href="/stockindex.html">주가지수</a></li>
-            <li class="active"><a data-toggle="tab" href="/ETF.html">ETF</a></li>
-            <li><a data-toggle="tab" href="/bond.html">bond</a></li>
-            <li><a data-toggle="tab" href="/corr.html">상관계수</a></li>
+            <li><a data-toggle="tab" id = home>Home</a></li>
+            <script>
+                $(document).ready(function(){
+                    $("#home").click(function(){
+                        window.location.href = g + "/index.html";
+                    });
+                });
+            </script>
+            <!-- 탭 클릭시 페이지 이동 -->
+            <li><a data-toggle="tab" id = stockindex >주가지수</a></li>
+            <script>
+                $(document).ready(function(){
+                    $("#stockindex").click(function(){
+                        window.location.href = g + "/stockindex.html";
+                    });
+                });
+            </script>
+            <li class="active"><a data-toggle="tab" id = ETF >ETF</a></li>
+            <script>
+                $(document).ready(function(){
+                    $("#ETF").click(function(){
+                        window.location.href = g + "/ETF.html";
+                    });
+                });
+            </script>
+            <li><a data-toggle="tab" id = bond >bond</a></li>
+            <script>
+                $(document).ready(function(){
+                    $("#bond").click(function(){
+                        window.location.href = g + "/bond.html";
+                    });
+                });
+            </script>
+            <li><a data-toggle="tab" id = corrpage >상관계수</a></li>
+            <script>
+                $(document).ready(function(){
+                    $("#corrpage").click(function(){
+                        window.location.href = g + "/corr.html";
+                    });
+                });
+            </script>
         </ul>
         <div class="tab-content">
             <div id="home" class="tab-pane fade"></div>
