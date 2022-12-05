@@ -1,8 +1,8 @@
-dfd.read_csv("public/D200index.csv")
+dfd.read_csv("D200index.csv")
 
 
 //나스닥 다우 에센피 각각 따로 그래프
-dfd.read_csv("public/D200index.csv")
+dfd.read_csv("D200index.csv")
 .then(df => {
     var layout = {
         //title: 'D200 Index',
@@ -17,7 +17,7 @@ new_df.plot("plot_div1").line({ columns: ["Nasdaq"], layout: layout
     console.log(err);
 })
 
-dfd.read_csv("public/D200index.csv")
+dfd.read_csv("D200index.csv")
 .then(df => {
     var layout = {
         //title: 'D200 Index',
@@ -33,7 +33,7 @@ new_df.plot("plot_div2").line({ columns: ["DJIA"], layout: layout
 }
 ) 
 
-dfd.read_csv("public/D200index.csv")
+dfd.read_csv("D200index.csv")
 .then(df => {
     var layout = {
         //title: 'D200 Index',
@@ -49,7 +49,7 @@ new_df.plot("plot_div3").line({ columns: ["S&P500"], layout: layout
 }
 )
 
-dfd.read_csv("public/ETF_scale.csv")
+dfd.read_csv("ETF_scale.csv")
 .then(df => {
     var layout = {
         xaxis: {title: 'Date'},
@@ -64,7 +64,7 @@ new_df.plot("plot_div4").line({ columns: ["QQQ","SOXX","XBI","XOP","IYH"], layou
 }
 )
 
-dfd.read_csv("public/bond_rate.csv")
+dfd.read_csv("bond_rate.csv")
 .then(df => {
     var layout = {
         xaxis: {title: 'Date'},
@@ -80,7 +80,7 @@ new_df.plot("plot_div5").line({ columns: ["기준금리"], layout: layout
 )
 
 //,"SHY","IEF","TLT"
-dfd.read_csv("public/bond_rate.csv")
+dfd.read_csv("bond_rate.csv")
 .then(df => {
     var layout = {
         xaxis: {title: 'Date'},

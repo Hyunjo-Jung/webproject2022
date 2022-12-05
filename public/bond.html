@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>주가정보시스템</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/danfojs@0.1.1/dist/index.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--ajax 사용-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--bootstrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- C:\webpro\source\project\public\js\csvtotable2.js -->
+    <script src="js/csvtotable2.js"></script>
+
+   <!--tablestyle.css 가져오기-->
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/csvtable.css">
+
+</head>
+<body>
+    <!--body style 가운데 정렬-->
+
+    <body style="background-color: #f2f2f2">
+
+    <div class="container">
+        <h1 style="text-align:center; font-size:36px; font-weight: 900; margin-bottom: 30px;">주가정보시스템</h1>
+    </div>
+    <div class="container-tab">
+        <ul class="nav nav-tabs">
+          <li><a data-toggle="tab" id = home>Home</a></li>
+          <script>
+              $(document).ready(function(){
+                  $("#home").click(function(){
+                      window.location.href = window.location.origin  + "/";
+                  });
+              });
+          </script>
+          <!-- 탭 클릭시 페이지 이동 -->
+          <li><a data-toggle="tab" id = stockindex >주가지수</a></li>
+          <script>
+              $(document).ready(function(){
+                  $("#stockindex").click(function(){
+                      window.location.href = window.location.origin  + "/stockindex";
+                  });
+              });
+          </script>
+          <li><a data-toggle="tab" id = ETF >ETF</a></li>
+          <script>
+              $(document).ready(function(){
+                  $("#ETF").click(function(){
+                      window.location.href = window.location.origin  + "/ETF";
+                  });
+              });
+          </script>
+          <li class="active"><a data-toggle="tab" id = bond >bond</a></li>
+          <script>
+              $(document).ready(function(){
+                  $("#bond").click(function(){
+                      window.location.href = window.location.origin  + "/bond";
+                  });
+              });
+          </script>
+          <li><a data-toggle="tab" id = corrpage >상관계수</a></li>
+          <script>
+              $(document).ready(function(){
+                  $("#corrpage").click(function(){
+                      window.location.href = window.location.origin  + "/corr";
+                  });
+              });
+          </script>
+
+        </ul>
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade"></div>
+            <div id="menu1" class="tab-pane fade"></div>
+            <div id="menu2" class="tab-pane fade in active"></div>
+            <!--table 안에 div 넣기-->
+            <table class = mainTable>
+                <thead class = mainThead>
+                  
+                  </style>
+                  <tr>
+                    <th>
+                      <h2 style="text-align:center; font-size:36px; font-weight: 900;">채권</h2>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class = mainTbody>
+                  <tr>
+                    <td>
+                        <!--css/dicchange.css 연결-->
+                        <link rel="stylesheet" href="css/divchange.css">
+                        <div class="main">
+                            <input type="radio" id="tab-1" name="show" checked/>
+                            <input type="radio" id="tab-2" name="show" />
+                            <div class="tab">
+                              <label for="tab-1">기준 금리</label>
+                              <label for="tab-2">채권 ETF</label>
+                            </div>
+                            <script src="js/index.js"></script>
+                            <div class="content" style="width:820px; height:560px; padding: 30px;">
+                              <div class="content-dis">
+                                <div id="plot_div5"></div>
+                              </div>
+                              <div class="content-dis">
+                                <div id="plot_div6"></div>
+                              </div>
+                            </div>  
+                          </div> 
+                      </td>
+                  </tr>
+                </tbody>
+              </table> 
+
+              <table class="mainTable" style="margin-top: 50px; width: 80% auto;" >
+                <thead class = "mainThead">
+                  <th>
+                <h2 style="text-align:center; font-size:36px; font-weight: 900;">전일 대비 ETF 등락률</h2>
+                  </th>
+                </thead>
+                <tbody class="mainTbody">
+                <tr>
+                <td style="border: 1">
+                <div id = gap style="display: inline-block"></div>
+                <script>
+                $.ajax({
+                  url: 'bond_chg.csv',
+                  dataType: 'text'
+                  }).done(successFunction2);
+                </script>
+                </td>
+                </tr>
+                </tbody>
+                </table>
+            <div id="menu3" class="tab-pane fade"></div>
+            <div id="menu4" class="tab-pane fade"></div>
+        </div>
+    </div>
+    
+
+
+
+            
+</body>
+</html>
+
+
