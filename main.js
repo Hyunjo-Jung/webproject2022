@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 app.use('/static', express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/home.html');
+    res.sendFile(__dirname + '/index.html');
 }
 );
 
