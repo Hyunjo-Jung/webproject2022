@@ -1,0 +1,53 @@
+
+.main input[type=radio] {
+	display: none;
+}
+#tab-1:checked ~ .tab label:nth-child(1),
+#tab-2:checked ~ .tab label:nth-child(2),
+#tab-3:checked ~ .tab label:nth-child(3)
+{
+	background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: none;
+}
+.content > div {
+	display: none;
+}
+#tab-1:checked ~ .content div:nth-child(1),
+#tab-2:checked ~ .content div:nth-child(2),
+#tab-3:checked ~ .content div:nth-child(3)
+{
+	display: block;
+}
+.main {
+  margin: 0 auto;
+  /* max-width:1380px; */
+  max-width: 100%;
+}
+.tab {
+  overflow: hidden;
+}
+.tab label {
+    font-size: 18px;
+    cursor: pointer;
+    float: center;
+    width: 25%;
+    text-align: center;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.content {
+  background-color: rgba(0, 0, 0, 0.2);
+  min-height: 250px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.content > div{
+   padding: 30px;
+   line-height: 1.5;
+   font-size: 17px;
+}
+

@@ -1,0 +1,19 @@
+table {
+  margin: 0 auto;
+  text-align: center;
+} 
+.mainTable {
+  border: 1px solid #444444;
+  border-collapse: collapse;
+}
+.mainThead {
+  border: 1px solid #444444;
+  border-collapse: collapse;
+  background-color: #cccccc;
+} 
+.mainTbody {
+  border: 1px solid #444444;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  margin-bottom: 50px;
+}

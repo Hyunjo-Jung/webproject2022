@@ -1,0 +1,29 @@
+
+#wrap{
+  /*가운데 정렬*/
+  margin:0 auto;
+  /*테두리*/
+  border:1px solid #ccc;
+  /*테두리 둥글게*/
+  border-radius:10px;
+  /*테두리 안쪽 여백*/
+  padding:20px;
+  /*테두리 밖쪽 여백*/
+  margin:20px;
+  /*테두리 안쪽 여백*/
+  padding:20px;
+  /*테두리 밖쪽 여백*/
+  margin:20px;
+  /*색상 예쁘게*/
+  background-color:#8b8a8a;
+}
+#wrap .box{ 
+  margin:0 auto;
+  border:1px solid #ccc;
+  border-radius:10px;
+  padding:20px;
+  margin:20px;
+  /*색상 흰색*/
+  background-color:#fff;
+  text-align: center;
+}

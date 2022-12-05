@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>주가정보시스템</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/danfojs@0.1.1/dist/index.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--ajax 사용-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--bootstrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--public/js/csvtotable.js 사용-->
+    <script src="public/js/csvtotable.js"></script>
+    <!--public/js/csvtotable2.js 사용-->
+    <script src="public/js/csvtotable2.js"></script>
+
+   <link rel="stylesheet" href="public/css/csvtable.css">
+   <link rel="stylesheet" href="public/css/table.css">
+    <link rel="stylesheet" href="public/css/vote.css">
+
+  </head>
+<body>
+    <!--body style 가운데 정렬-->
+
+    <body style="background-color: #f2f2f2">
+
+    <div class="container">
+        <h1 style="text-align:center; font-size:36px; font-weight: 900; margin-bottom: 30px;">주가정보시스템</h1>
+    </div>
+    <div class="container-tab">
+        <ul class="nav nav-tabs">
+            <li><a data-toggle="tab" href="/">Home</a></li>
+            <!--라우팅된 '/sotckindex.html'로 연결-->
+            <li class="active"><a data-toggle="tab" href="/stockindex.html">주가지수</a></li>
+            <li><a data-toggle="tab" href="/ETF.html">ETF</a></li>
+            <li><a data-toggle="tab" href="/bond.html">bond</a></li>
+            <li><a data-toggle="tab" href="/corr.html">상관계수</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade"></div>
+            <div id="menu1" class="tab-pane fade in active">
+            <!--table 안에 div 넣기-->
+                <table class = mainTable>
+                    <thead class = mainThead>
+                      
+                      </style>
+                      <tr>
+                        <th>
+                          <h2 style="text-align:center; font-size:36px; font-weight: 900;">주가지수</h2>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody class = mainTbody>
+                      <tr>
+                        <td>
+                            <!--public/css/dicchange.css 연결-->
+                            <link rel="stylesheet" href="public/css/divchange.css">
+                            <div class="main">
+                                <input type="radio" id="tab-1" name="show" checked/>
+                                <input type="radio" id="tab-2" name="show" />
+                                <input type="radio" id="tab-3" name="show" />
+                                <div class="tab">
+                                  <label for="tab-1">Nasdaq</label>
+                                  <label for="tab-2">DJIA</label>
+                                  <label for="tab-3">S&P500</label>
+                                </div>
+                                <script src="public/js/index.js"></script>
+                                <div class="content" style="width:820px; height:560px; padding: 30px;">
+                                  
+                                  <div class="content-dis">
+                                    <div id="plot_div1"></div>
+                                  </div>
+                                  <div class="content-dis">
+                                    <div id="plot_div2"></div>
+                                  </div>
+                                  <div class="content-dis">
+                                    <div id="plot_div3"></div>
+    
+                                  </div>
+                                </div>  
+                              </div> 
+                          </td>
+                      </tr>
+                    </tbody>
+                  </table> 
+            </div>
+            <!--간격 만들기-->
+            <div style="height: 50px;"></div>
+
+            <table class="mainTable">
+              <thead class="mainThead">
+                <tr>
+                  <th>
+                    <!-- 이격도 제목 가운데 정렬 h2-->
+              <h2 style="text-align:center; font-size:36px; font-weight: 900;">이격도(%)</h2>
+                  </th>
+                </tr>
+              </thead>
+              <tbody  class="mainTbody">
+                <tr>
+                  <td>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <div class="panel panel-primary">
+                            <div class="panel-heading">괄호 안의 값은 %를 나타냅니다.</div>
+                            <div class="panel-body>"> </div>
+                          </div>        
+                        </div>
+                      </div>  
+                    </div>
+                    <script>  
+                     $.ajax({
+                      url: 'public/index_ma_gap.csv',
+                      dataType: 'text'
+                      }).done(successFunction);
+                    </script> 
+                    <P id = maGap></P>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+              <table class="mainTable" style="margin-top: 50px; width: 80%;">
+              <thead class = "mainThead">
+                <th>
+              <h2 style="text-align:center; font-size:36px; font-weight: 900;">전일 대비 등락률</h2>
+                </th>
+              </thead>
+              <tbody class="mainTbody">
+              <tr>
+              <td style="border: 1">
+              <div id = gap style="display: inline-block"></div>
+              <script>
+              $.ajax({
+                url: 'public/index_chg.csv',
+                dataType: 'text'
+                }).done(successFunction2);
+              </script>
+              </td>
+              </tr>
+              </tbody>
+              </table>
+
+
+              </tr>
+            </table>
+            
+          
+          <!--form으로 상승, 하락 투표시스템 만들기-->
+          <div id="wrap">
+            <div class="box">
+              <h2 style="text-align:center; font-size:36px; font-weight: 900;">내일 주가지수 예상</h2>
+              <form action="http://localhost:3000/stockindex.html" method="post">
+                <input type="radio" name="vote" value="up" id="up" checked>
+                <label for="up">상승</label>
+                <input type="radio" name="vote" value="down" id="down">
+                <label for="down">하락</label>
+                <input type="submit" value="투표">
+              </form>
+          </div>
+
+
+
+                
+
+
+        
+        </div>
+            <div id="menu2" class="tab-pane fade"></div>
+            <div id="menu3" class="tab-pane fade"></div>
+            <div id="menu4" class="tab-pane fade"> </div>
+        </div>
+    </div>
+            
+
+
+            
+</body>
+</html>
+
+
