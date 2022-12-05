@@ -13,33 +13,33 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/static', express.static(__dirname + '/public'));
-
+//고정폴더로 public 사용
+app.use(express.static('public'));
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/public/index.html');
 }
 );
 
-// //stockindex.html 라우팅
-// app.get('/stockindex', (req, res) => {
-//     res.sendFile(__dirname + '/stockindex.html');
-// }
-// );
-// //ETF.html 라우팅
-// app.get('/ETF', (req, res) => {
-//     res.sendFile(__dirname + '/ETF.html');
-// }
-// );
-// //bond.html 라우팅
-// app.get('/bond', (req, res) => {
-//     res.sendFile(__dirname + '/bond.html');
-// }
-// );
-// //corr.html 라우팅
-// app.get('/corr', (req, res) => {
-//     res.sendFile(__dirname + '/corr.html');
-// }
-// );
+//stockindex.html 라우팅
+app.get('/stockindex', (req, res) => {
+    res.sendFile(__dirname + '/public/stockindex.html');
+}
+);
+//ETF.html 라우팅
+app.get('/ETF', (req, res) => {
+    res.sendFile(__dirname + '/public/ETF.html');
+}
+);
+//bond.html 라우팅
+app.get('/bond', (req, res) => {
+    res.sendFile(__dirname + '/public/bond.html');
+}
+);
+//corr.html 라우팅
+app.get('/corr', (req, res) => {
+    res.sendFile(__dirname + '/public/corr.html');
+}
+);
 
 
 app.listen(port, () => {
