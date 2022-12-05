@@ -315,11 +315,11 @@ def get_data():
     print(df)
 
     #전일 대비 변화율 구하기
-    df['QQQ_chg'] = df['QQQ'].pct_change()
-    df['SOXX_chg'] = df['SOXX'].pct_change()
-    df['XBI_chg'] = df['XBI'].pct_change()
-    df['XOP_chg'] = df['XOP'].pct_change()
-    df['IYH_chg'] = df['IYH'].pct_change()
+    df['QQQ_chg'] = df['QQQ'].pct_change() * 100
+    df['SOXX_chg'] = df['SOXX'].pct_change() * 100
+    df['XBI_chg'] = df['XBI'].pct_change() * 100
+    df['XOP_chg'] = df['XOP'].pct_change() * 100
+    df['IYH_chg'] = df['IYH'].pct_change() * 100
 
     #위 칼럼들만 가져오기
     df = df[['QQQ_chg', 'SOXX_chg', 'XBI_chg', 'XOP_chg', 'IYH_chg']]
@@ -327,14 +327,16 @@ def get_data():
     df.columns = ['QQQ', 'SOXX', 'XBI', 'XOP', 'IYH']
     #데이터프레임 아래 10개만 자르기
     df = df.tail(10)
+    
     #날짜 %Y-%m-%d 형식으로 변경
     df.index = df.index.strftime('%Y-%m-%d')
 
-    #소수점 4자리까지 표시
-    df = df.round(4)
+    #소수점 2자리 반올림
+    df = df.round(2)
 
     #% 표시
-    df = df.mul(100).astype(str) + '%'
+    df = df.astype(str) + '%'
+
 
     #데이터프레임 저장
     df.to_csv('public/ETF_chg.csv')
